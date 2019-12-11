@@ -1,3 +1,3 @@
 ### Css-variables-playground
 
-Look at `/src/sass/components/\_base.scss`
+Look at `/src/sass/components/_base.scss`
