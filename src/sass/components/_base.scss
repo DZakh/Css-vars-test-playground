@@ -1,0 +1,119 @@
+/**
+ * @section Base Styles
+ */
+
+:root {
+  --bg-clr: red;
+}
+body {
+  font-size: 125%;
+  margin: 0 auto;
+  max-width: 42em;
+  width: 88%;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+/*-----------------------
+  This doesn't work in IE
+  -----------------------
+.clr-palette {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  &__clr-option {
+    border: 1px solid #000;
+    padding: 5em;
+    background: var(--bg-clr);
+
+    &_red {
+      --bg-clr: red;
+    }
+
+    &_blue {
+      --bg-clr: blue;
+    }
+
+    &_green {
+      --bg-clr: green;
+    }
+  }
+}
+*/
+
+/*-----------------------
+  This allows us to hide themes which don't work in IE
+  -----------------------
+.clr-palette {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  &__clr-option {
+    border: 1px solid #000;
+    padding: 5em;
+    background: red; // the default theme
+    background: var(--bg-clr); // for custom themes
+
+    &_red {
+      --bg-clr: red;
+    }
+
+    &_blue {
+      display: none;
+      @supports (--foo: 13px) {
+        display: block;
+        --bg-clr: blue;
+      }
+    }
+
+    &_green {
+      display: none;
+      @supports (--foo: 13px) {
+        display: block;
+        --bg-clr: green;
+      }
+    }
+  }
+}
+*/
+
+.clr-palette {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  &__clr-option {
+    border: 1px solid #000;
+    padding: 5em;
+    background: var(--bg-clr);
+
+    &_red {
+      // It's already has default background.
+      // We can try to use postcss-css-variables instead of postcss-custom-properties.
+      // It will give us a possiabialyty to declare variables not only in root, but there are no chances it will work.
+    }
+
+    &_blue {
+      display: none;
+      @supports (--foo: 13px) {
+        display: block;
+        --bg-clr: blue;
+      }
+    }
+
+    &_green {
+      display: none;
+      @supports (--foo: 13px) {
+        display: block;
+        --bg-clr: green;
+      }
+    }
+  }
+}
